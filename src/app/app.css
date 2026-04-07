@@ -1,0 +1,214 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background-color: #000;
+}
+
+.vs-screen {
+  flex: 1;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  overflow: hidden;
+  box-shadow: inset 0 0 150px rgba(0,0,0,0.9);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.8) 100%);
+  z-index: 1;
+}
+
+.back-btn-overlay {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 100;
+  background: rgba(0,0,0,0.5);
+  border: 1px solid var(--theme-secondary);
+  color: var(--theme-secondary);
+  padding: 10px 20px;
+  cursor: pointer;
+  font-family: var(--font-secondary);
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  transition: all 0.2s;
+}
+
+.back-btn-overlay:hover {
+  background: var(--theme-secondary);
+  color: #000;
+}
+
+.win-btn {
+  background: #222;
+  border: 1px solid #444;
+  color: #fff;
+  padding: 10px 15px;
+  font-family: inherit;
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.p1-side .win-btn:hover { background: var(--theme-primary); }
+.p2-side .win-btn:hover { background: var(--theme-secondary); }
+
+.fighter-side {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  z-index: 2;
+  display: flex;
+  align-items: flex-end;
+  background-size: auto 110%;
+  background-repeat: no-repeat;
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.p1-side {
+  background-position: left center;
+  /* Dark textured gradient for p1 */
+  background-image: linear-gradient(135deg, rgba(30,0,0,0.8) 0%, rgba(0,0,0,0) 50%);
+}
+
+.p2-side {
+  background-position: right center;
+  /* Dark textured gradient for p2 */
+  background-image: linear-gradient(-135deg, rgba(0,0,30,0.8) 0%, rgba(0,0,0,0) 50%);
+}
+
+/* Diagonal Separator Lines */
+.p1-side::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 4px;
+  background-color: var(--theme-primary);
+  transform: skewX(-15deg);
+  transform-origin: bottom;
+  box-shadow: 0 0 15px var(--theme-primary), 0 0 30px var(--theme-primary);
+}
+
+.p2-side::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -4px;
+  bottom: 0;
+  width: 4px;
+  background-color: var(--theme-secondary);
+  transform: skewX(-15deg);
+  transform-origin: bottom;
+  box-shadow: 0 0 15px var(--theme-secondary), 0 0 30px var(--theme-secondary);
+}
+
+.character-render {
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  height: 55%;
+  max-width: 80%;
+  object-fit: contain;
+  filter: drop-shadow(0 0 30px rgba(0,0,0,0.8));
+  pointer-events: none;
+  border-radius: 12px;
+}
+
+.p1-side .character-render {
+  right: 15%;
+}
+
+.p2-side .character-render {
+  left: 15%;
+  transform: translateY(-50%) scaleX(-1); /* flip image if needed and keep translateY */
+}
+
+/* For realistic facing directions based on our specific prompt */
+.p2-side .character-render.no-flip {
+  transform: translateY(-50%); /* Keeps vertical center but removes scaleX(-1) */
+}
+
+.player-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 30px;
+  width: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
+}
+
+.p1-side .player-info {
+  flex-direction: row;
+}
+
+.p2-side .player-info {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  border: 2px solid #555;
+  object-fit: cover;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+.p1-side .avatar {
+  border-color: var(--theme-primary);
+  box-shadow: 0 0 10px var(--theme-primary);
+}
+
+.p2-side .avatar {
+  border-color: var(--theme-secondary);
+  box-shadow: 0 0 10px var(--theme-secondary);
+}
+
+.names p.real-name {
+  font-family: var(--font-secondary);
+  font-size: 1.5rem;
+  color: #ccc;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: -5px;
+}
+
+.names h2.char-name {
+  font-size: 4rem;
+  line-height: 1;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow: 2px 2px 0 #000, 4px 4px 10px rgba(0,0,0,0.5);
+  margin: 0;
+}
+
+.vs-logo-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  pointer-events: none;
+  animation: pulse 2s infinite alternate;
+}
+
+@keyframes pulse {
+  0% { transform: translate(-50%, -50%) scale(1); filter: brightness(1); }
+  100% { transform: translate(-50%, -50%) scale(1.05); filter: brightness(1.2); }
+}
+
+.vs-logo {
+  width: 300px;
+  height: auto;
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.8));
+}

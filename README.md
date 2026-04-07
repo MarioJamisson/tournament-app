@@ -1,59 +1,41 @@
-# TournamentApp
+# 🏆 Ultimate Tournament Hub
+**Desenvolvido por Mario Jamisson**
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.6.
+Bem-vindo ao **Ultimate Tournament Hub** — um gerenciador de chaves e campeonatos construído do zero para acabar com a bagunça de organizar torneios locais e trazer uma experiência visual de "transmissão profissional" para a sua sala de estar (ou para sua live).
 
-## Development server
+Esqueça as chaves desenhadas em papel de pão ou sites genéricos chatos. Registre seus jogadores, escolha seu jogo e deixe a plataforma orquestrar o show.
 
-To start a local development server, run:
+---
 
-```bash
-ng serve
-```
+## 🎮 Jogos Suportados & Temas Dinâmicos
+Este não é só mais um gerador de chaves e sim um hub que se adapta visualmente ao seu torneio. A interface, as cores e todo o banco de personagens mudam automaticamente com base no jogo escolhido:
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- 🥊 **Tekken 8:** Fundo escuro com contrastes agressivos em Vermelho e Ciano Neon.
+- 🐉 **Mortal Kombat 11:** Sombras quentes com detalhes impactantes em Ouro e Laranja.
+- 🎸 **Guitar Hero III:** Temática grunge com o clássico Verde e Vermelho da franquia de guitarras de plástico.
 
-## Code scaffolding
+Basta selecionar a arena na tela inicial e a interface inteira muda de roupagem.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+---
 
-```bash
-ng generate component component-name
-```
+## ⚡ Principais Funcionalidades
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+- **Registro Profissional:** Adicione o nome dos competidores, faça o upload da foto pessoal (avatar) de cada um e relacione-os perfeitamente com os elencos originais predefinidos de cada jogo.
+- **Sorteio Justo (Fisher-Yates):** Nada de jogadores caindo sempre contra as mesmas pessoas por conta da ordem de inscrição. O motor de sorteio interno garante uma distribuição 100% aleatória no seu *bracket*.
+- **Tela de Combate (Versus Screen):** A grande estrela do show. Clique em uma partida em andamento e a plataforma carrega uma belíssima tela de "Versus" gigante, focando frente a frente nos personagens e avatares — perfeita para jogar num telão ou no OBS.
+- **Ecossistema Offline Inteligente:** Simplesmente jogue suas artes `.png` dos lutadores na pasta `public/images/` e o sistema reconhece instantaneamente. Faltou alguma imagem? Nosso sistema cria uma caixa de texto *placeholder* incrivelmente estilosa para não quebrar seu layout.
 
-```bash
-ng generate --help
-```
+---
 
-## Building
+## 🛠️ Como Rodar na sua Máquina
 
-To build the project run:
+Se quiser rodar localmente ou contribuir:
 
-```bash
-ng build
-```
+1. Tenha o Node.js instalado.
+2. Abra seu terminal na pasta do projeto e rode `npm install` para instalar os pacotes.
+3. Inicie o servidor local digitando `npm start`.
+4. Abra o navegador em `http://localhost:4200/` e comece o campeonato!
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+---
 
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+*Feito por Mario Jamisson e pensado com carinho para a FGC e lendas das guitarras virtuais.*

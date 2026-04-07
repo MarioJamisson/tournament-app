@@ -1,1 +1,57 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@400;600;700&family=Rajdhani:wght@500;700&display=swap');
+
+:root {
+  --theme-primary: #ff003c;
+  --theme-secondary: #00e5ff;
+  --bg-dark: #07090b;
+  --text-light: #f0f0f0;
+  --font-primary: 'Teko', sans-serif;
+  --font-secondary: 'Rajdhani', sans-serif;
+}
+
+.theme-tekken {
+  --theme-primary: #ff003c;
+  --theme-secondary: #00e5ff;
+  --bg-dark: #07090b;
+}
+
+.theme-mk11 {
+  --theme-primary: #ffd700;
+  --theme-secondary: #ff8c00;
+  --bg-dark: #12100e;
+}
+
+.theme-gh3 {
+  --theme-primary: #ff4500;
+  --theme-secondary: #32cd32;
+  --bg-dark: #1a1515;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-primary);
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--theme-primary);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--theme-secondary);
+}
