@@ -17,10 +17,17 @@ export interface Match {
   status: 'upcoming' | 'live' | 'finished';
   time: string;
   nextMatchId?: string; // id of the match the winner goes to
+  loserNextMatchId?: string; // id of the match the loser drops down to
+  bracket: 'winners' | 'losers' | 'grand-finals';
   winnerId?: string;
+  
+  // Visual flags for animations
+  isResetMatch?: boolean; // Flag if this is the reset match
+  justDroppedToLosers?: boolean; // UI flag when a player drops here
 }
 
 export interface BracketRound {
   title: string;
   matches: Match[];
+  type: 'winners' | 'losers' | 'grand-finals';
 }
